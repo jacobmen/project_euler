@@ -8,7 +8,7 @@ primeFactors' n divisor
                                      then divisor : primeFactors' (n `div` divisor) divisor
                                    else primeFactors' n (divisor + 2)
     | n > 2                      = [n]
-    | n <= 2                     = []
+    | otherwise                  = []
 
 primeFactors :: (Integral a) => a -> [a]
 primeFactors n = primeFactors' n 3
